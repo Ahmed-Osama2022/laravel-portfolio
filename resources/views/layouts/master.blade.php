@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/banner.css">
   <link rel="stylesheet" href="assets/css/sidebar.css">
+
+  {{-- AOS - Animate on scroll library --}}
+  <link rel="stylesheet" href="{{ asset('assets/css/AOS.css') }}">
 </head>
 
 <body>
@@ -37,6 +40,19 @@
   <main>
     @yield('content')
   </main>
+
+  {{-- AOS - Animate on scroll library --}}
+  <script src="{{ asset('js/AOS.js') }}"></script>
+  <script>
+    AOS.init({
+      offset: 0,
+      delay: 50,
+      duration: 750,
+      easing: 'ease-in-out',
+      once: false,
+      mirror: false,
+    });
+  </script>
 
 </body>
 
