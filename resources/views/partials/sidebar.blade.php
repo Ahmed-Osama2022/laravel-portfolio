@@ -18,7 +18,7 @@
 </div>
 
 {{-- For < Desktop screens (Mobile & Tablets) --}}
-<div class="sidebar-phone d-block d-lg-none ">
+<div class="sidebar-phone d-block d-lg-none" data-aos="fade-up">
   <div class="items">
     <ul class="d-flex gap-3 flex-row p-4 justify-content-around align-items-center rounded      shadow">
       <li class="active"><i class="fa-solid fa-house fs-4"></i></li>

@@ -42,7 +42,7 @@
   </main>
 
   {{-- AOS - Animate on scroll library --}}
-  <script src="{{ asset('js/AOS.js') }}"></script>
+  <script src="{{ asset('assets/js/AOS.js') }}"></script>
   <script>
     AOS.init({
       offset: 0,

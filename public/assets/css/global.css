@@ -50,6 +50,9 @@ body {
   object-fit: cover;
 }
 
+.navbar {
+  z-index: 1000;
+}
 
 .navbar p,
 .navbar a {

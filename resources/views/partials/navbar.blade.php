@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg bg-transparent py-4">
+  <nav class="navbar navbar-expand-lg bg-transparent py-4" data-aos="fade-down">
     <div class="container">
       {{-- <a class="navbar-brand" href="#">{{ env('APP_NAME') }}</a> --}}
 
