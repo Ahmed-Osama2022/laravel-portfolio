@@ -1,8 +1,8 @@
   <nav class="navbar navbar-expand-lg bg-transparent py-4">
     <div class="container">
       {{-- <a class="navbar-brand" href="#">{{ env('APP_NAME') }}</a> --}}
-      <a class="navbar-brand" href="#">
-        <img src="{{ asset('assets/images/LOGO(Ahmed).svg') }}" alt="LOGO Image">
+      <a class="navbar-brand p-0" href="#">
+        <img src="{{ asset('assets/images/LOGO(Ahmed)-sm.svg') }}" class="img-fluid p-0" alt="LOGO Image">
       </a>
       {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
