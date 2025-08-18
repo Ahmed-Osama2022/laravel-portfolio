@@ -73,3 +73,7 @@ body {
 .navbar-brand img {
   transform: scale(1.5);
 }
+
+ul {
+  list-style: none !important;
+}
