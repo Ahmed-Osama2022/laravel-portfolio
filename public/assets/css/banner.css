@@ -19,3 +19,7 @@
   background-color: var(--laravel-red);
   color: var(--white-color);
 }
+
+.banner .cv_btn:hover {
+  background-color: var(--light-red);
+}

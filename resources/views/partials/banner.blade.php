@@ -6,8 +6,8 @@
         <h1 class="fw-bold">Hello I'm Ahmed Osama</h1>
         <h1 class="laravel-color">Full stack web developer</h1>
       </div>
-      <div class="">
-        <a href="#" class="cv_btn btn px-3 py-2 mt-4">Download CV</a>
+      <div>
+        <a href="#" class="btn cv_btn px-3 py-2 mt-4">Download CV</a>
       </div>
     </div>
     {{-- 2nd col --}}
