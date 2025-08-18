@@ -10,6 +10,8 @@
   {{-- Bootstrap Files --}}
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
+  {{-- Own styles --}}
+  <link rel="stylesheet" href="css/global.css">
 </head>
 
 <body>

@@ -1,0 +1,25 @@
+/* This file is responsable for all main css for the whole project */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root {
+  /* Colors */
+  --light-black: #151515;
+  --heavy-balck: #101010;
+  --heavy-red: #53120B;
+  --light-red: #911001;
+  --laravel-red: #EE3004;
+
+  /* transitions time */
+  --long-trans: 0.4s;
+  --short-trans: 0.2s;
+
+
+}
+
+/* Font */
+.sora-font {
+  /* Font */
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
