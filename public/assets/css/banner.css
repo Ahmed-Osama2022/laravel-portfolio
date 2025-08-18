@@ -1,0 +1,16 @@
+.banner {
+  height: 80vh;
+}
+
+.banner-text h1 {
+  font: var(--h1-font);
+}
+
+.laravel-color {
+  color: var(--laravel-red)
+}
+
+.banner img {
+  padding: 0;
+  /* aspect-ratio: 17:9; */
+}

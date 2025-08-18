@@ -11,12 +11,30 @@
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
   {{-- Own styles --}}
-  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/banner.css">
 </head>
 
 <body>
+  {{-- Navbar --}}
   @include('partials.navbar')
 
+  {{-- Main BG --}}
+  <div class="img-wrapper">
+    <img src="{{ asset('assets/images/Main-BG-edited.png') }}" alt="Main BG" class="">
+  </div>
+
+  {{-- Banner --}}
+  <div class="container">
+    @include('partials.banner')
+  </div>
+
+  {{-- Sidebar --}}
+
+  {{-- Main Content --}}
+  <main>
+    @yield('content')
+  </main>
 
 </body>
 

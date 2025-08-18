@@ -1,0 +1,71 @@
+/* This file is responsable for all main css for the whole project */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root {
+  /* Colors */
+  --light-black: #151515;
+  --heavy-balck: #101010;
+  --heavy-red: #53120B;
+  --light-red: #911001;
+  --laravel-red: #EE3004;
+  --white-color: #F1F0EF;
+
+  /* transitions time */
+  --long-trans: 0.4s;
+  --short-trans: 0.2s;
+  /* some special font edit */
+  --ff: "Sora", sans-serif;
+  --h1-font: bold max(36px, 4vw) / max(48px, 5vw) var(--ff);
+}
+
+/* Font */
+.sora-font {
+  /* Font */
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  overflow-y: hidden;
+  position: relative;
+  color: var(--white-color) !important
+}
+
+.img-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: -100;
+}
+
+.img-wrapper img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
+
+
+.navbar p,
+.navbar a {
+  color: var(--white-color);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: var(--white-color) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: var(--laravel-red) !important;
+}
+
+.navbar .nav-link.active {
+  color: var(--laravel-red) !important;
+}
