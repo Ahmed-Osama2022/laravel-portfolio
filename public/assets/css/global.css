@@ -69,3 +69,7 @@ body {
 .navbar .nav-link.active {
   color: var(--laravel-red) !important;
 }
+
+.navbar-brand img {
+  transform: scale(1.3);
+}
