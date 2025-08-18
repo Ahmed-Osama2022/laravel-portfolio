@@ -14,3 +14,8 @@
   padding: 0;
   /* aspect-ratio: 17:9; */
 }
+
+.banner .cv_btn {
+  background-color: var(--laravel-red);
+  color: var(--white-color);
+}

@@ -13,6 +13,7 @@
   {{-- Own styles --}}
   <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
   </div>
 
   {{-- Sidebar --}}
+  @include('partials.sidebar')
 
   {{-- Main Content --}}
   <main>

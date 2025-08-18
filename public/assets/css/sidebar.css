@@ -1,0 +1,31 @@
+/* Old code  */
+/* .sidebar {
+  position: fixed;
+  top: 30vh;
+  right: 1rem;
+  height: 40vh;
+  bottom: 30vh;
+
+  z-index: 20;
+} */
+
+/* NEW code */
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.sidebar ul {
+  list-style: none;
+  background-color: hsla(0, 0%, 100%, .1);
+  backdrop-filter: blur(4px);
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+  color: var(--laravel-red);
+
+}
