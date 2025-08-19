@@ -29,9 +29,9 @@
   </div>
 
   {{-- Banner --}}
-  <div class="container">
-    @include('partials.banner')
-  </div>
+  {{-- <div class="container"> --}}
+  {{-- @include('partials.banner') --}}
+  {{-- </div> --}}
 
   {{-- Sidebar --}}
   @include('partials.sidebar')
