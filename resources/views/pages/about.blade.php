@@ -1,8 +1,6 @@
-{{-- NOTE: Home page is a banner (and banner only) --}}
 @extends('layouts.master')
 
 @section('content')
-  {{-- Banner --}}
   <div class="container">
     @include('pages.banner')
   </div>

@@ -1,4 +1,4 @@
-/* This file is responsable for all main css for the whole project */
+/* This file is responsable for all main CSS for the whole project */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 :root {
@@ -31,6 +31,17 @@ body {
   color: var(--white-color) !important
 }
 
+/* Overwrite the Bootstrap CSS default styles */
+ul {
+  list-style: none !important;
+}
+
+a {
+  color: unset !important;
+  text-decoration: unset !important;
+}
+
+/* != Global */
 .img-wrapper {
   height: 100vh;
   width: 100%;
@@ -81,8 +92,4 @@ body {
   .navbar-brand img {
     transform: scale(1);
   }
-}
-
-ul {
-  list-style: none !important;
 }
