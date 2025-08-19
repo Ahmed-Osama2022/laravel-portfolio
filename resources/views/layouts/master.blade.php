@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  {{-- Navbar --}}
+  {{-- Navbar (Top-Bar) --}}
   @include('partials.navbar')
 
   {{-- Main BG --}}
@@ -28,12 +28,7 @@
     <img src="{{ asset('assets/images/Main-BG-edited.png') }}" alt="Main BG" class="">
   </div>
 
-  {{-- Banner --}}
-  {{-- <div class="container"> --}}
-  {{-- @include('partials.banner') --}}
-  {{-- </div> --}}
-
-  {{-- Sidebar --}}
+  {{-- Sidebar (NavBar) --}}
   @include('partials.sidebar')
 
   {{-- Main Content --}}
