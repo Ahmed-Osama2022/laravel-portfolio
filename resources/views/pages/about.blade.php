@@ -2,6 +2,6 @@
 
 @section('content')
   <div class="container">
-    @include('pages.banner')
+    {{-- @include('pages.banner') --}}
   </div>
 @endsection
