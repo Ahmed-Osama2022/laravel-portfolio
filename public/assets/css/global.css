@@ -25,10 +25,12 @@
   font-optical-sizing: auto;
 }
 
+
 body {
   overflow-y: hidden;
   position: relative;
-  color: var(--white-color) !important
+  color: var(--white-color) !important;
+  background-color: var(--light-black);
 }
 
 /* Overwrite the Bootstrap CSS default styles */
