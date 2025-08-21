@@ -48,4 +48,4 @@ Route::patch('/info', [InformationController::class, 'edit'])->middleware('auth'
 Route::delete('/info', [InformationController::class, 'destroy'])->middleware('auth');
 
 
-Route::get('/work', [WorkController::class, 'index']);
+Route::get('/projects', [WorkController::class, 'index']);
