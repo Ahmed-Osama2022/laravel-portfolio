@@ -10,8 +10,8 @@
   background-color: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(4px);
 
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   /* prevents it from stretching full width */
   display: inline-block;
 }
@@ -38,12 +38,14 @@
   background-color: rgba(0, 0, 0, 0.55);
 }
 
-.contact-card:hover .contact-title {
+.contact-card:hover .contact-title,
+.contact-card:active .contact-title {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.5);
 }
 
-.contact-card:hover .contact-icon {
+.contact-card:hover .contact-icon,
+.contact-card:active .contact-icon {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1.2);
 }

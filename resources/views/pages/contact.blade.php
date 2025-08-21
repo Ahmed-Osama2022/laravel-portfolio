@@ -19,23 +19,39 @@
       </div>
 
       {{-- 2nd row --}}
-      <div class="col-md-6 text-center text-md-start mb-5 pb-4" data-aos="fade-down">
+      <div class="col-md-6 text-center text-md-start mt-3 mb-5 pb-4" data-aos="fade-down">
         {{-- Cards --}}
-        <div class="row flex-row gap-3 align-items-stretch">
+        <div class="row flex-row gap-3 align-items-stretch justify-content-center justify-content-md-start">
           {{-- 1 --}}
-          <div class="col-3 border rounded-3 shadow contact-card position-relative text-center">
+          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle ">Github</h5>
             {{-- Icon --}}
             <i class="fa-brands fa-github fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
-          </div>
-
-
+          </a>
 
           {{-- 2 --}}
-
+          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center">
+            {{-- Title --}}
+            <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Facebook</h5>
+            {{-- Icon --}}
+            <i class="fa-brands fa-facebook fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
+          </a>
           {{-- 3 --}}
+          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center">
+            {{-- Title --}}
+            <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Whatsapp</h5>
+            {{-- Icon --}}
+            <i class="fa-brands fa-whatsapp fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
+          </a>
 
+          {{-- 4 --}}
+          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center ">
+            {{-- Title --}}
+            <h5 class="contact-title position-absolute top-50 start-50 translate-middle">LinkedIn</h5>
+            {{-- Icon --}}
+            <i class="fa-brands fa-linkedin fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
+          </a>
 
         </div>
       </div>
