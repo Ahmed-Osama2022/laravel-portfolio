@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\InformationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +38,12 @@ Route::get('/contact', function () {
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index']);
+
+
+Route::get('/info', [InformationController::class, 'index']);
+Route::post('/info', [InformationController::class, 'store'])->middleware('auth');
+Route::patch('/info', [InformationController::class, 'edit'])->middleware('auth');
+Route::delete('/info', [InformationController::class, 'destroy'])->middleware('auth');
+
+
+// Route::get('/work', [App\Http\Controllers\HomeController::class, 'index']);
