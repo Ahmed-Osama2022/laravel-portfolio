@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\WorkController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +48,4 @@ Route::patch('/info', [InformationController::class, 'edit'])->middleware('auth'
 Route::delete('/info', [InformationController::class, 'destroy'])->middleware('auth');
 
 
-// Route::get('/work', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/work', [WorkController::class, 'index']);
