@@ -13,7 +13,7 @@
 
         {{-- Social media icons & links --}}
         <div class="" id="navbarNav">
-          <ul class="d-flex flex-row align-items-center justify-content-between gap-3 m-auto">
+          <ul class="d-flex flex-row align-items-center justify-content-between gap-3 m-auto bg-danger px-0">
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-brands fa-facebook fs-5"></i></a>
             </li>

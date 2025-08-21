@@ -1,3 +1,7 @@
+.services h1 {
+  font: var(--h1-font);
+}
+
 .my-services span {
   color: var(--laravel-red);
 }
