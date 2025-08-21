@@ -6,7 +6,7 @@
       <div
            class="d-flex flex-column flex-md-row text-center text-md-start align-items-center justify-content-between w-100">
         <div class="">
-          <a class="navbar-brand p-0" href="#">
+          <a class="navbar-brand p-0" href="{{ Route('home') }}">
             <img src="{{ asset('assets/images/LOGO(Ahmed)-sm.svg') }}" class="img-fluid p-0" alt="LOGO Image">
           </a>
         </div>
@@ -32,6 +32,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp fs-5"></i></a>
             </li>
+            <li class="btn cv_btn"><a href="#">Logout</a></li>
           </ul>
         </div>
         {{-- End Row --}}

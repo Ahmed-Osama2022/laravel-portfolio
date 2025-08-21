@@ -15,11 +15,13 @@
   /* aspect-ratio: 17:9; */
 }
 
-.banner .cv_btn {
-  background-color: var(--laravel-red);
-  color: var(--white-color);
+.banner .cv_btn,
+.cv_btn {
+  background-color: var(--laravel-red) !important;
+  color: var(--white-color) !important;
 }
 
-.banner .cv_btn:hover {
-  background-color: var(--light-red);
+.banner .cv_btn:hover,
+.cv_btn:hover {
+  background-color: var(--light-red) !important;
 }
