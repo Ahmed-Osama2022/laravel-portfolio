@@ -32,7 +32,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp fs-5"></i></a>
             </li>
-            <li class="btn cv_btn"><a href="#">Logout</a></li>
+            @if (Auth::check())
+              <li class="">
+                <form method="post" action="{{ route('logout') }}">
+                  @csrf
+                  <button class="btn cv_btn" type="submit">Logout</button>
+                </form>
+              </li>
+            @endif
+
           </ul>
         </div>
         {{-- End Row --}}
