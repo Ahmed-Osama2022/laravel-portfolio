@@ -1,0 +1,49 @@
+.contact h1 {
+  font: var(--h1-font);
+}
+
+.my-contact span {
+  color: var(--laravel-red);
+}
+
+.contact-card {
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+
+  width: 150px;
+  height: 150px;
+  /* prevents it from stretching full width */
+  display: inline-block;
+}
+
+/*  */
+.contact-title,
+.contact-icon {
+  transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.4s ease;
+}
+
+/* Default state */
+.contact-title {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.contact-icon {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* Hover state */
+.contact-card:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.contact-card:hover .contact-title {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.contact-card:hover .contact-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
