@@ -1,0 +1,17 @@
+#my-work span {
+  color: var(--laravel-red);
+}
+
+.work h1 {
+  font: var(--h1-font);
+}
+
+.work-card {
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  transition: background-color var(--short-trans);
+}
+
+.work-card:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+}
