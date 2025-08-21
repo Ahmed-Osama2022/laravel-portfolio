@@ -18,6 +18,15 @@
 
   {{-- AOS - Animate on scroll library --}}
   <link rel="stylesheet" href="{{ asset('assets/css/AOS.css') }}">
+
+  @if (Route::is('home'))
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+  @endif
+
 </head>
 
 <body>
