@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/services.css">
 
   {{-- AOS - Animate on scroll library --}}
-  {{-- <link rel="stylesheet" href="{{ asset('assets/css/AOS.css') }}"> --}}
+  <link rel="stylesheet" href="{{ asset('assets/css/AOS.css') }}">
 
   @if (Route::is('home'))
     <style>

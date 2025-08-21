@@ -10,7 +10,7 @@
 
     <div class="row p-3">
       {{-- About me text --}}
-      <div class="col-md-6 text-center text-md-start" data-aos="fade-right">
+      <div class="col-md-6 text-center text-md-start" data-aos="fade-up">
         <h1 class="fw-bold fs-1">Who am I?</h1>
         <p class="about-me-text pe-3 fw-bold">
           I’m a <span>full-stack web developer</span> passionate about building scalable, user-friendly, and secure web
@@ -27,7 +27,7 @@
       </div>
 
       {{-- Skills --}}
-      <div class="col-md-6 text-center text-md-start p-2 mb-5 pb-4" data-aos="fade-left">
+      <div class="col-md-6 text-center text-md-start p-2 mb-5 pb-4" data-aos="fade-down">
         <h1 class="fw-bold fs-1 text-decoration-underline">Skills</h1>
         <ul class="d-flex flex-row gap-3 align-items-center flex-wrap text-wrap p-0 fs-3">
           <span class="fs-5 text-start">Web development - </span>
