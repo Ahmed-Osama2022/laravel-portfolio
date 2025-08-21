@@ -1,0 +1,7 @@
+.about-me h1 {
+  font: var(--h1-font);
+}
+
+.about-me-text span {
+  color: var(--laravel-red);
+}
