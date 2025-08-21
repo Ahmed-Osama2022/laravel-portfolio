@@ -51,8 +51,8 @@
   <script>
     AOS.init({
       offset: 0,
-      delay: 50,
-      duration: 750,
+      delay: 150,
+      duration: 1000,
       easing: 'ease-in-out',
       once: false,
       mirror: false,
