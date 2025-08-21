@@ -29,6 +29,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-brands fa-github fs-5"></i></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp fs-5"></i></a>
+            </li>
           </ul>
         </div>
         {{-- End Row --}}

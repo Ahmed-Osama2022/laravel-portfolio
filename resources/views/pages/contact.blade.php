@@ -23,7 +23,8 @@
         {{-- Cards --}}
         <div class="row flex-row gap-3 align-items-stretch justify-content-center justify-content-md-start">
           {{-- 1 --}}
-          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center">
+          <a href="https://github.com/ahmed-osama2022" target="_blank"
+             class="col-3 border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle ">Github</h5>
             {{-- Icon --}}
@@ -31,14 +32,16 @@
           </a>
 
           {{-- 2 --}}
-          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center">
+          <a href="https://www.facebook.com/share/1AXDGvbJzC/" target="_blank"
+             class="col-3 border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Facebook</h5>
             {{-- Icon --}}
             <i class="fa-brands fa-facebook fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
           </a>
           {{-- 3 --}}
-          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center">
+          <a href="https://wa.me/+201553064098" target="_blank"
+             class="col-3 border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Whatsapp</h5>
             {{-- Icon --}}
@@ -46,11 +49,21 @@
           </a>
 
           {{-- 4 --}}
-          <a href="#" class="col-3 border rounded-3 shadow contact-card position-relative text-center ">
+          <a href="https://linkedin.com/in/ahmed-osama-053737240" target="_blank"
+             class="col-3 border rounded-3 shadow contact-card position-relative text-center ">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">LinkedIn</h5>
             {{-- Icon --}}
             <i class="fa-brands fa-linkedin fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
+          </a>
+
+          {{-- 5 --}}
+          <a href="mailto:ahmadosama.2011@gmail.com" target="_blank"
+             class="col-3 border rounded-3 shadow contact-card position-relative text-center ">
+            {{-- Title --}}
+            <h5 class="contact-title position-absolute top-50 start-50 translate-middle">E-mail</h5>
+            {{-- Icon --}}
+            <i class="fa-solid fa-envelope fs-2 contact-icon position-absolute top-50 start-50 translate-middle"></i>
           </a>
 
         </div>
