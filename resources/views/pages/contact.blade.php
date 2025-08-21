@@ -7,9 +7,11 @@
       <h1>Contact me</h1>
 
       {{-- NOTE: This button will open a modal... --}}
-      <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto">
-        <i class="fa-solid fa-pencil"></i>
-      </a>
+      @if (Auth::check())
+        <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto">
+          <i class="fa-solid fa-pencil"></i>
+        </a>
+      @endif
     </div>
 
     <div class="row p-3">
