@@ -8,6 +8,11 @@
       </div>
       <div>
         <a href="#" class="btn cv_btn px-3 py-2 mt-4">Download CV</a>
+        {{-- NOTE: This button will open a modal... --}}
+        <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-2">
+          <i class="fa-solid fa-pencil"></i>
+        </a>
+
       </div>
     </div>
     {{-- 2nd col --}}

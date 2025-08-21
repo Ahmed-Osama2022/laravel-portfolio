@@ -5,6 +5,11 @@
     <div class="contact d-flex align-items-center p-3 justify-content-center  justify-content-md-start"
          data-aos="fade-down">
       <h1>Contact me</h1>
+
+      {{-- NOTE: This button will open a modal... --}}
+      <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto">
+        <i class="fa-solid fa-pencil"></i>
+      </a>
     </div>
 
     <div class="row p-3">
