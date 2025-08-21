@@ -19,8 +19,9 @@ return new class extends Migration
       $table->string('instagram')->nullable();
       $table->string('linkedin')->nullable();
       $table->string('whatsapp')->nullable();
-      $table->string('X-twitter')->nullable();
+      $table->string('X_twitter')->nullable();
       $table->string('github')->nullable();
+      $table->string('cv_link')->nullable();
 
       $table->timestamps();
     });
