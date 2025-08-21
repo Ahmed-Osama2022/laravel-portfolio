@@ -25,29 +25,31 @@
 
           <div class="rounded shadow services-card p-3 flex-fill">
             {{-- Icon --}}
-            <i class="fa-brands fa-html5 fs-2"></i>
+            <i class="fa-solid fa-crop-simple fs-2"></i>
             {{-- Title --}}
-            <h3></h3>
+            <h5 class="my-3">Branding</h5>
             {{-- text --}}
             <p class="text-muted-white">Beatiful websites with keeping UX in mind customer value.</p>
           </div>
 
           <div class="rounded shadow services-card p-3 flex-fill">
             {{-- Icon --}}
-            <i class="fa-brands fa-html5 fs-2"></i>
+            <i class="fa-solid fa-users fs-2"></i>
             {{-- Title --}}
-            <h3></h3>
+            <h5 class="my-3">User Experience</h5>
             {{-- text --}}
-            <p class="text-muted-white">Changing the old ways of static and CSR concepts.</p>
+            <p class="text-muted-white">
+              Understanding user behaviors, needs, and preferences to create interfaces that are intuitive, efficient, and
+              enjoyable to use.</p>
           </div>
 
           <div class="rounded shadow services-card p-3 flex-fill">
             {{-- Icon --}}
-            <i class="fa-brands fa-html5 fs-2"></i>
+            <i class="fa-solid fa-gem fs-2"></i>
             {{-- Title --}}
-            <h3></h3>
+            <h5 class="my-3">Unique code</h5>
             {{-- text --}}
-            <p class="text-muted-white">Beatiful websites with keeping UX in mind customer value.</p>
+            <p class="text-muted-white">Custom solutions, no copy-paste code — every project, unique.</p>
           </div>
 
         </div>
