@@ -23,7 +23,7 @@
               <div class="mb-3">
                 <label for="email" class="form-label text-capitalize">E-mail link:</label>
                 <input type="text" name="email" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->email ?? '' }}" id="x">
+                       value="{{ $social_links->email ?? '' }}" id="email">
               </div>
               {{-- 2 --}}
               <div class="mb-3">
@@ -107,7 +107,7 @@
         {{-- Cards --}}
         <div class="row flex-row gap-3 align-items-stretch justify-content-center justify-content-md-start">
           {{-- 1 --}}
-          <a href="https://github.com/ahmed-osama2022" target="_blank"
+          <a href="{{ $social_links->github ?? '#' }}" target="_blank"
              class="col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Github</h5>
@@ -116,7 +116,7 @@
           </a>
 
           {{-- 2 --}}
-          <a href="https://www.facebook.com/share/1AXDGvbJzC/" target="_blank"
+          <a href="{{ $social_links->facebook ?? '#' }}" target="_blank"
              class="col-4 col-md-4 col-lg-3 border rounded-3 shadow contact-card position-relative text-center flex-fill">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Facebook</h5>
@@ -124,7 +124,7 @@
             <i class="fa-brands fa-facebook fs-4 contact-icon position-absolute top-50 start-50 translate-middle"></i>
           </a>
           {{-- 3 --}}
-          <a href="https://wa.me/+201553064098" target="_blank"
+          <a href="{{ $social_links->whatsapp ?? '#' }}" target="_blank"
              class="col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Whatsapp</h5>
@@ -133,7 +133,7 @@
           </a>
 
           {{-- 4 --}}
-          <a href="https://linkedin.com/in/ahmed-osama-053737240" target="_blank"
+          <a href="{{ $social_links->linkedin ?? '#' }}" target="_blank"
              class=" col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center ">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">LinkedIn</h5>
@@ -142,12 +142,21 @@
           </a>
 
           {{-- 5 --}}
-          <a href="mailto:ahmadosama.2011@gmail.com" target="_blank"
+          <a href="mailto:{{ $social_links->email ?? '' }}" target="_blank"
              class=" col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center ">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">E-mail</h5>
             {{-- Icon --}}
             <i class="fa-solid fa-envelope fs-4 contact-icon position-absolute top-50 start-50 translate-middle"></i>
+          </a>
+
+          {{-- 6 --}}
+          <a href="{{ $social_links->X_twitter ?? '' }}" target="_blank"
+             class=" col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center ">
+            {{-- Title --}}
+            <h5 class="contact-title position-absolute top-50 start-50 translate-middle fw-bold">X</h5>
+            {{-- Icon --}}
+            <i class="fa-brands fa-x-twitter  fs-4 contact-icon position-absolute top-50 start-50 translate-middle"></i>
           </a>
 
         </div>
