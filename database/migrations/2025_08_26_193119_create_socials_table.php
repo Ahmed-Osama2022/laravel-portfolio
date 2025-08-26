@@ -11,9 +11,10 @@ return new class extends Migration
    */
   public function up(): void
   {
-    Schema::create('information', function (Blueprint $table) {
+    Schema::create('socials', function (Blueprint $table) {
       $table->id();
-      // You need all - could social media links {}
+
+      // You need all - could social media links
       $table->string('email')->nullable();
       $table->string('facebook')->nullable();
       $table->string('instagram')->nullable();
@@ -21,7 +22,6 @@ return new class extends Migration
       $table->string('whatsapp')->nullable();
       $table->string('X_twitter')->nullable();
       $table->string('github')->nullable();
-      // $table->string('cv_link')->nullable();
 
       $table->timestamps();
     });
@@ -32,6 +32,6 @@ return new class extends Migration
    */
   public function down(): void
   {
-    Schema::dropIfExists('information');
+    Schema::dropIfExists('socials');
   }
 };

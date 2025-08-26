@@ -2,13 +2,52 @@
 
 @section('content')
   <div class="container sora-font">
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content sora-font">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Contact information details:</h1>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-1">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-1">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+
+
+              {{-- <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div> --}}
+
+              {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
+
+              <div class="modal-footer my-3">
+                <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn cv_btn">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="contact d-flex align-items-center p-3 justify-content-center  justify-content-md-start"
          data-aos="fade-down">
       <h1>Contact me</h1>
 
       {{-- NOTE: This button will open a modal... --}}
       @if (Auth::check())
-        <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto">
+        <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto" data-bs-toggle="modal"
+           data-bs-target="#contactModal">
           <i class="fa-solid fa-pencil"></i>
         </a>
       @endif
