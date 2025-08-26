@@ -76,6 +76,7 @@
         <h1 class="laravel-color">Full stack web developer</h1>
       </div>
       <div>
+        {{-- Show the success message for uploading the CV file --}}
         <p class="text-muted-white fw-bold mt-2">{{ session('file_success') }}</p>
         {{-- Show error message for cvFile --}}
         @error('cvFile')
