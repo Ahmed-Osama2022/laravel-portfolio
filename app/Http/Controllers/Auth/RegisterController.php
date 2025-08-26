@@ -37,7 +37,9 @@ class RegisterController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('guest');
+    // Disable the register functionality after creating an account
+    abort(403);
+    // $this->middleware('guest');
   }
 
   /**
