@@ -102,7 +102,7 @@
         </p>
 
         {{-- Show the success message for updating the social links --}}
-        <p class="text-muted-white fw-bold mt-2">{{ session('links_success') }}</p>
+        <p class="text-muted-white fw-bold mt-2">{{ session('links_success') }} </p>
         {{-- Show error message for cvFile --}}
         @if ($errors->any())
           <div class="text-danger mt-2 fw-bold">
@@ -113,7 +113,6 @@
             </ul>
           </div>
         @endif
-
 
       </div>
 
