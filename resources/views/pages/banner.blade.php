@@ -83,7 +83,7 @@
           <div class="text-danger mt-2 fw-bold">Error: {{ $message }}</div>
         @enderror
 
-        <a href="storage/{{ App\Models\File::first()->cv_link }}" class="btn cv_btn px-3 py-2 mt-4">View
+        <a href="storage/{{ App\Models\File::first()->cv_link ?? '' }}" class="btn cv_btn px-3 py-2 mt-4">View
           CV</a>
         {{-- NOTE: This button will open a modal... --}}
         @if (Auth::check())
