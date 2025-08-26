@@ -13,10 +13,10 @@ return new class extends Migration
   {
     Schema::create('projects', function (Blueprint $table) {
       $table->id();
-      // You need {Title - imageLink}
+      // You need {Title - imageLink - online_link}
       $table->string('title', 45);
       $table->string('imgSrc');
-      $table->string('online_link');
+      $table->string('online_link')->nullable();
 
       $table->timestamps();
     });
