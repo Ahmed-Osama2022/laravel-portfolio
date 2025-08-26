@@ -10,25 +10,63 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Contact information details:</h1>
             <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-1">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div class="modal-body sora-font">
+            <p class="fs-5">Please (add || edit) your contact information:</p>
+
+            <form method="POST" action="#">
+              @csrf
+              @method('PATCH')
+
+              @php $social_links = App\Models\Social::first(); @endphp
+
+              {{-- 1 --}}
+              <div class="mb-3">
+                <label for="email" class="form-label text-capitalize">E-mail link:</label>
+                <input type="text" name="email" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->email ?? '' }}" id="x">
               </div>
-              <div class="mb-1">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+              {{-- 2 --}}
+              <div class="mb-3">
+                <label for="facebook" class="form-label text-capitalize">Facebook Link:</label>
+                <input type="text" name="facebook" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->facebook ?? '' }}" id="facebook">
               </div>
 
+              {{-- 3 --}}
+              <div class="mb-3">
+                <label for="instagram" class="form-label text-capitalize">instagram Link:</label>
+                <input type="text" name="instagram" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->instagram ?? '' }}" id="instagram">
+              </div>
 
-              {{-- <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div> --}}
+              {{-- 4 --}}
+              <div class="mb-3">
+                <label for="whatsapp" class="form-label text-capitalize">whatsapp Link:</label>
+                <input type="text" name="whatsapp" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->whatsapp ?? '' }}" id="whatsapp">
+              </div>
 
-              {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
+              {{-- 5 --}}
+              <div class="mb-3">
+                <label for="linkedin" class="form-label text-capitalize">linkedIn Link:</label>
+                <input type="text" name="linkedin" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->linkedin ?? '' }}" id="linkedin">
+              </div>
+
+              {{-- 6 --}}
+              <div class="mb-3">
+                <label for="github" class="form-label text-capitalize">github Link:</label>
+                <input type="text" name="github" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->github ?? '' }}" id="github">
+              </div>
+
+              {{-- 7 --}}
+              <div class="mb-3">
+                <label for="x" class="form-label text-capitalize">x Link:</label>
+                <input type="text" name="x" class="form-control bg-transparent text-white"
+                       value="{{ $social_links->X_twitter ?? '' }}" id="x">
+              </div>
+
 
               <div class="modal-footer my-3">
                 <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
@@ -40,7 +78,7 @@
       </div>
     </div>
 
-    <div class="contact d-flex align-items-center p-3 justify-content-center  justify-content-md-start"
+    <div class="contact d-flex align-items-center p-3 justify-content-center justify-content-md-start"
          data-aos="fade-down">
       <h1>Contact me</h1>
 
@@ -72,7 +110,7 @@
           <a href="https://github.com/ahmed-osama2022" target="_blank"
              class="col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
-            <h5 class="contact-title position-absolute top-50 start-50 translate-middle ">Github</h5>
+            <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Github</h5>
             {{-- Icon --}}
             <i class="fa-brands fa-github fs-4 contact-icon position-absolute top-50 start-50 translate-middle"></i>
           </a>
