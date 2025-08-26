@@ -41,7 +41,9 @@ class InformationController extends Controller
     // TEST: debug
     // dd($request->file('cvFile'));
 
-
+    /**
+     * We will use here a "replace-style upload"
+     */
 
     // 1. Delete old record (if exists)
     $oldFile = File::first();
