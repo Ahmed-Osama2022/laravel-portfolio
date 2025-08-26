@@ -91,29 +91,44 @@
         <p class="text-muted-white">
           As a <span>full-stack web developer</span>, I try to be advanced with my websites and I hope you like It.
         </p>
+        {{-- Show the success message for updating the social links --}}
+        <p class="text-muted-white fw-bold mt-2">{{ session('project_success') }} </p>
+        {{-- Show error message for cvFile --}}
+        @if ($errors->any())
+          <div class="text-danger mt-2 fw-bold">
+            <ul class="px-0">
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+
       </div>
 
       {{-- 2nd row --}}
       <div class="col-md-9 text-center text-md-start mb-5 pb-4" data-aos="fade-down">
         {{-- Work Cards --}}
         <div class="row flex-row gap-3 align-items-center">
-
           {{-- Repeat this NOTE: and don't forget to use pagination! --}}
           @if (count($projects) !== 0)
-            {{-- @foreach ($projects as $project) --}}
-            <a href="#" class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
-              {{-- Image --}}
-              <img src="{{ asset('assets/images/mk-gym.vercel.app-old.png') }}" alt="Work Image"
-                   class="img-fluid w-100 h-100 object-fit-cover opacity-50">
+            @foreach ($projects as $project)
+              <a href="{{ asset('storage/' . $project->online_link) }}"
+                 class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
+                {{-- Image --}}
+                <img src="{{ asset('storage/' . $project->imgSrc) }}" alt="Project Image"
+                     class="img-fluid w-100 h-100 object-fit-cover opacity-50">
 
-              {{-- Title overlay --}}
-              <div class="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-center">
-                Restaurant App
-              </div>
-            </a>
-            {{-- @endforeach --}}
+                {{-- Title overlay --}}
+                <div class="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-center">
+                  {{ $project->title }}
+                </div>
+                {{-- Edit Button for each project --}}
+                <p class="btn btn-outline-secondary text-end"><i class="fa-solid fa-pencil"></i></p>
+              </a>
+            @endforeach
           @else
-            <p class="text-white-50 fw-bold fs-4">There is no uploaded projects yet.</p>
+            <p class="text-white-50 fw-bold fs-4 px-5">There is no uploaded projects yet.</p>
           @endif
         </div>
       </div>
