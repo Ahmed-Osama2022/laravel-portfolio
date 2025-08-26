@@ -21,7 +21,7 @@ return new class extends Migration
       $table->string('whatsapp')->nullable();
       $table->string('X_twitter')->nullable();
       $table->string('github')->nullable();
-      $table->string('cv_link')->nullable();
+      // $table->string('cv_link')->nullable();
 
       $table->timestamps();
     });

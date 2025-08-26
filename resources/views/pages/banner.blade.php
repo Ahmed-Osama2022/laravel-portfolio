@@ -2,26 +2,34 @@
   <!-- Modal -->
   <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content sora-font">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">CV File settings</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           {{-- Show the exsisting one --}}
 
           {{-- Show the edit form --}}
           <h2 class="fs-6">Upload your CV here:</h2>
-          <p class="text-muted-white">Please choose a PDF file to upload!</p>
-          <form action="/info" method="patch">
-            {{-- <input type="file" name="cvFile" id="cvFile" value=""> --}}
-
+          <p class="text-muted-white">
+            Please choose a PDF file to upload! <br>
+            maximum file size is <span class="text-decoration-underline">30MB</span>
+          </p>
+          <form action="/info/cv" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
             <input type="file" name="cvFile" id="cvFile" accept="application/pdf">
+
+            {{-- Show error message for cvFile --}}
+            @error('cvFile')
+              <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
 
             <p id="fileName" class="text-muted-white mt-2"></p>
             <div id="previewContainer" style="margin-top: 15px; display: none;">
               <h3>CV Preview:</h3>
-              <embed id="preview" type="application/pdf" width="100%" height="500px" />
+              <embed id="preview" type="application/pdf" width="100%" height="420px" />
             </div>
 
             <script>
@@ -68,7 +76,13 @@
         <h1 class="laravel-color">Full stack web developer</h1>
       </div>
       <div>
-        <a href="#" class="btn cv_btn px-3 py-2 mt-4" download>Download CV</a>
+        <p class="text-muted-white fw-bold mt-2">{{ session('file_success') }}</p>
+        {{-- Show error message for cvFile --}}
+        @error('cvFile')
+          <div class="text-danger mt-2 fw-bold">Error: {{ $message }}</div>
+        @enderror
+
+        <a href="#" class="btn cv_btn px-3 py-2 mt-4">Download CV</a>
         {{-- NOTE: This button will open a modal... --}}
         @if (Auth::check())
           <!-- Button trigger modal -->

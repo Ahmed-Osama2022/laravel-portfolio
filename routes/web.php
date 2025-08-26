@@ -45,6 +45,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/info', [InformationController::class, 'index']);
 Route::post('/info', [InformationController::class, 'store'])->middleware('auth');
 Route::patch('/info', [InformationController::class, 'edit'])->middleware('auth');
+Route::patch('/info/cv', [InformationController::class, 'edit_CV'])->middleware('auth');
 Route::delete('/info', [InformationController::class, 'destroy'])->middleware('auth');
 
 
