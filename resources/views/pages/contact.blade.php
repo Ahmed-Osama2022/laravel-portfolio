@@ -1,6 +1,6 @@
 @extends('layouts.master')
-
 @section('content')
+  {{-- {{ dd($social_links) }} --}}
   <div class="container sora-font">
     <!-- Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -13,7 +13,7 @@
           <div class="modal-body sora-font">
             <p class="fs-5">Please (add || edit) your contact information:</p>
 
-            <form method="POST" action="#">
+            <form method="POST" action="/contact">
               @csrf
               @method('PATCH')
 
@@ -23,48 +23,48 @@
               <div class="mb-3">
                 <label for="email" class="form-label text-capitalize">E-mail link:</label>
                 <input type="text" name="email" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->email ?? '' }}" id="email">
+                       value="{{ old('email', $social_links->email ?? '') }}" id="email">
               </div>
               {{-- 2 --}}
               <div class="mb-3">
                 <label for="facebook" class="form-label text-capitalize">Facebook Link:</label>
                 <input type="text" name="facebook" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->facebook ?? '' }}" id="facebook">
+                       value="{{ old('facebook', $social_links->facebook ?? '') }}" id="facebook">
               </div>
 
               {{-- 3 --}}
               <div class="mb-3">
                 <label for="instagram" class="form-label text-capitalize">instagram Link:</label>
                 <input type="text" name="instagram" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->instagram ?? '' }}" id="instagram">
+                       value="{{ old('instagram', $social_links->instagram ?? '') }}" id="instagram">
               </div>
 
               {{-- 4 --}}
               <div class="mb-3">
-                <label for="whatsapp" class="form-label text-capitalize">whatsapp Link:</label>
-                <input type="text" name="whatsapp" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->whatsapp ?? '' }}" id="whatsapp">
+                <label for="whatsapp" class="form-label text-capitalize">whatsapp number:</label>
+                <input type="tel" name="whatsapp" class="form-control bg-transparent text-white"
+                       value="{{ old('whatsapp', $social_links->whatsapp ?? '') }}" id="whatsapp">
               </div>
 
               {{-- 5 --}}
               <div class="mb-3">
                 <label for="linkedin" class="form-label text-capitalize">linkedIn Link:</label>
                 <input type="text" name="linkedin" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->linkedin ?? '' }}" id="linkedin">
+                       value="{{ old('linkedin', $social_links->linkedin ?? '') }}" id="linkedin">
               </div>
 
               {{-- 6 --}}
               <div class="mb-3">
                 <label for="github" class="form-label text-capitalize">github Link:</label>
-                <input type="text" name="github" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->github ?? '' }}" id="github">
+                <input type="text" name="github" class="form-control bg-transparent text-white" {{-- value="{{ $social_links->github ?? '' }}" --}}
+                       value="{{ old('github', $social_links->github ?? '') }}" id="github">
               </div>
 
               {{-- 7 --}}
               <div class="mb-3">
-                <label for="x" class="form-label text-capitalize">x Link:</label>
-                <input type="text" name="x" class="form-control bg-transparent text-white"
-                       value="{{ $social_links->X_twitter ?? '' }}" id="x">
+                <label for="X_twitter" class="form-label text-capitalize">x Link:</label>
+                <input type="text" name="X_twitter" class="form-control bg-transparent text-white"
+                       value="{{ old('X_twitter', $social_links->X_twitter ?? '') }}" id="X_twitter">
               </div>
 
 
@@ -100,6 +100,21 @@
           Let's join forces and combine our skills to tackle your next project with a powerful
           synergy that guarantees success.
         </p>
+
+        {{-- Show the success message for updating the social links --}}
+        <p class="text-muted-white fw-bold mt-2">{{ session('links_success') }}</p>
+        {{-- Show error message for cvFile --}}
+        @if ($errors->any())
+          <div class="text-danger mt-2 fw-bold">
+            <ul class="px-0">
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+
+
       </div>
 
       {{-- 2nd row --}}
@@ -124,7 +139,7 @@
             <i class="fa-brands fa-facebook fs-4 contact-icon position-absolute top-50 start-50 translate-middle"></i>
           </a>
           {{-- 3 --}}
-          <a href="{{ $social_links->whatsapp ?? '#' }}" target="_blank"
+          <a href="https://wa.me/+2{{ $social_links->whatsapp ?? '#' }}" target="_blank"
              class="col-4 col-md-4 col-lg-3 flex-fill border rounded-3 shadow contact-card position-relative text-center">
             {{-- Title --}}
             <h5 class="contact-title position-absolute top-50 start-50 translate-middle">Whatsapp</h5>

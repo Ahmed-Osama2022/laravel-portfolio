@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateCvRequest;
+use App\Http\Requests\UpdateInformationRequest;
 use App\Models\File;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,7 +16,9 @@ class InformationController extends Controller
    */
   public function index()
   {
-    //
+    $social_links = Social::all();
+
+    return view('pages.contact', compact('social_links'));
   }
 
   /**
@@ -28,9 +32,29 @@ class InformationController extends Controller
   /**
    * Edit a specific record
    */
-  public function edit(Request $request)
+  public function edit(UpdateInformationRequest $request)
   {
-    dd($request);
+    // TEST:
+    // dd($request->all());
+
+    // dd(Social::first()->email);
+
+    $social = Social::first();
+    // Remove _token and _method from request
+    $data = $request->except(['_token', '_method']);
+
+    // Filter out empty values so they don’t overwrite existing DB values
+    $data = array_filter($data, fn($value) => !is_null($value) && $value !== '');
+
+    // Update only provided fields
+    if ($social) {
+      $social->update($data);
+    } else {
+      Social::create($data);
+    }
+
+
+    return redirect()->back()->with('links_success', 'Social links updated successfully!');
   }
 
   /**

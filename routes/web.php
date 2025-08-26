@@ -33,20 +33,21 @@ Route::get('/work', function () {
   return view('pages.work');
 });
 
-Route::get('/contact', function () {
-  return view('pages.contact');
-});
+// Route::get('/contact', function () {
+// return view('pages.contact');
+// });
 
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index']);
 
 
-Route::get('/info', [InformationController::class, 'index']);
+Route::get('/contact', [InformationController::class, 'index']);
 Route::post('/info', [InformationController::class, 'store'])->middleware('auth');
-Route::patch('/info', [InformationController::class, 'edit'])->middleware('auth');
-Route::patch('/info/cv', [InformationController::class, 'edit_CV'])->middleware('auth');
+Route::patch('/contact', [InformationController::class, 'edit'])->middleware('auth');
 Route::delete('/info', [InformationController::class, 'destroy'])->middleware('auth');
+
+Route::patch('/info/cv', [InformationController::class, 'edit_CV'])->middleware('auth');
 
 
 Route::get('/projects', [WorkController::class, 'index']);
