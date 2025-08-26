@@ -16,6 +16,7 @@ return new class extends Migration
       // You need {Title - imageLink}
       $table->string('title', 45);
       $table->string('imgSrc');
+      $table->string('online_link');
 
       $table->timestamps();
     });
