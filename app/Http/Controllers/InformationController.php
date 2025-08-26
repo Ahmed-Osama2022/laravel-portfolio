@@ -27,7 +27,7 @@ class InformationController extends Controller
    */
   public function edit(Request $request)
   {
-    //
+    dd();
   }
   /**
    * Delete a specific record.

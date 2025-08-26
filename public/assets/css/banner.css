@@ -25,3 +25,9 @@
 .cv_btn:hover {
   background-color: var(--light-red) !important;
 }
+
+/* Overwrite some BootstrapCSS classes */
+.modal-content {
+  background-color: rgba(40, 40, 40, 0.65) !important;
+  color: #f1f1f1 !important;
+}
