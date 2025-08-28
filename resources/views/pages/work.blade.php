@@ -108,14 +108,35 @@
             </ul>
           </div>
         @endif
-
-        {{-- Show the success flash message if project deleted succesfully --}}
+        {{-- Show the "flash messages" if project (deleted || updated) succesfully --}}
         @if (Auth::check())
+          {{-- Deleted --}}
           @if (session('work_delete'))
-            <div class="alert cv_btn p-2 py-3">
+            <div class="alert cv_btn p-2 py-3" data-aos="zoom-in" id="session_message">
               {{ session('work_delete') }}
             </div>
           @endif
+          {{-- Updated --}}
+          @if (session('work_update'))
+            <div class="alert cv_btn p-2 py-3" data-aos="zoom-in" id="session_message">
+              {{ session('work_update') }}
+            </div>
+          @endif
+
+          <script>
+            // Function to show the message for 3 seconds
+            function showMessage() {
+              const msg = document.getElementById("session_message");
+              msg.style.display = "block"; // show it
+
+              setTimeout(() => {
+                msg.style.display = "none"; // hide after 3 seconds
+              }, 3000); // 3000ms = 3s
+            }
+
+            // Example: run automatically when page loads
+            window.onload = showMessage;
+          </script>
         @endif
 
       </div>
