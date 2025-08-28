@@ -11,13 +11,14 @@
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
   {{-- Own styles --}}
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/banner.css">
-  <link rel="stylesheet" href="assets/css/sidebar.css">
-  <link rel="stylesheet" href="assets/css/about-me.css">
-  <link rel="stylesheet" href="assets/css/services.css">
-  <link rel="stylesheet" href="assets/css/work.css">
-  <link rel="stylesheet" href="assets/css/contact.css">
+
+  <link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/banner.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/about-me.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/services.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/work.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
 
   {{-- AOS - Animate on scroll library --}}
   <link rel="stylesheet" href="{{ asset('assets/css/AOS.css') }}">

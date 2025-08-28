@@ -55,14 +55,26 @@ class WorkController extends Controller
    */
   public function show(Request $request, $id)
   {
-    return 'Item ' . $id;
-  }
+    // Get the record from the DB.
+    $project = Project::find($id);
+    // dd($project);
 
+    return view('pages.workEdit', compact('project'));
+  }
 
   /**
    * Edit a specific record.
    */
   public function edit(Request $request, $id)
+  {
+    //
+  }
+
+  /**
+   * Delete a specific record.
+   */
+
+  public function destroy(Request $request, $id)
   {
     //
   }
