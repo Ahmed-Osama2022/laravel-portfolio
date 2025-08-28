@@ -166,7 +166,7 @@
             @else
               {{-- For site visitors --}}
               @foreach ($projects as $project)
-                <a href="{{ asset('storage/' . $project->online_link) }}"
+                <a href="{{ $project->online_link }}"
                    class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
                   {{-- Image --}}
                   <img src="{{ asset('storage/' . $project->imgSrc) }}" alt="Project Image"
