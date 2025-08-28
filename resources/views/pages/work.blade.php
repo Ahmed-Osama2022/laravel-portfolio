@@ -74,6 +74,9 @@
 
     {{-- NOTE: Don't forget to add the AOS animations --}}
     <div class="work d-flex align-items-center p-3 justify-content-center justify-content-md-start" data-aos="fade-down">
+
+
+
       <h1>Projects <span>&</span> Work</h1>
       {{-- NOTE: This button will open a modal... --}}
       @if (Auth::check())
@@ -102,6 +105,15 @@
               @endforeach
             </ul>
           </div>
+        @endif
+
+        {{-- Show the success flash message if project deleted succesfully --}}
+        @if (Auth::check())
+          @if (session('work_delete'))
+            <div class="alert cv_btn p-2 py-3">
+              {{ session('work_delete') }}
+            </div>
+          @endif
         @endif
 
       </div>
