@@ -26,7 +26,7 @@
   @if (Route::is('home'))
     <style>
       body {
-        overflow: hidden;
+        /* overflow: hidden; */
       }
     </style>
   @endif
