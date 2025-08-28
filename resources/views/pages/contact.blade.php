@@ -80,16 +80,16 @@
 
     <div class="contact d-flex align-items-center p-3 justify-content-center justify-content-md-start"
          data-aos="fade-down">
-      <h1>Contact me</h1>
+      <h1 class="mb-0">Contact me</h1>
 
-      {{-- NOTE: This button will open a modal... --}}
       @if (Auth::check())
-        <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto" data-bs-toggle="modal"
-           data-bs-target="#contactModal">
+        <button type="button" class="btn btn-outline-info px-3 py-2 ms-4" data-bs-toggle="modal"
+                data-bs-target="#contactModal">
           <i class="fa-solid fa-pencil"></i>
-        </a>
+        </button>
       @endif
     </div>
+
 
     <div class="row p-3">
       {{-- 1st row --}}

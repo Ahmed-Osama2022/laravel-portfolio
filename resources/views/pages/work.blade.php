@@ -60,8 +60,6 @@
                 });
               </script>
 
-
-
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn cv_btn">Save changes</button>
@@ -73,16 +71,12 @@
       </div>
     </div>
 
-
     {{-- NOTE: Don't forget to add the AOS animations --}}
     <div class="work d-flex align-items-center p-3 justify-content-center justify-content-md-start" data-aos="fade-down">
+      <h1 class="mb-0">Projects <span>&</span> Work</h1>
 
-
-
-      <h1>Projects <span>&</span> Work</h1>
-      {{-- NOTE: This button will open a modal... --}}
       @if (Auth::check())
-        <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-4 my-auto" data-bs-toggle="modal"
+        <a href="#" class="btn btn-outline-info px-3 py-2 ms-4" data-bs-toggle="modal"
            data-bs-target="#projectsAddModal">
           <i class="fa-solid fa-plus"></i>
         </a>
