@@ -50,12 +50,20 @@ class WorkController extends Controller
     return redirect()->back()->with('project_success', 'Project created successfully!');
   }
 
+  /**
+   * Show the edit form for a specific record.
+   */
+  public function show(Request $request, $id)
+  {
+    return 'Item ' . $id;
+  }
+
 
   /**
    * Edit a specific record.
    */
   public function edit(Request $request, $id)
   {
-    return 'Item ' . $id;
+    //
   }
 }

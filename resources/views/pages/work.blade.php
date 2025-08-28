@@ -115,25 +115,18 @@
             @if (Auth::check())
               {{-- For Auth users --}}
               @foreach ($projects as $project)
-                <a href="#"
-                   onclick="event.preventDefault(); document.getElementById('edit-form-{{ $project->id }}').submit();"
+                <a href="{{ route('work.show', ['id' => $project->id]) }}"
                    class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
-
+                  {{-- Image --}}
                   <img src="{{ asset('storage/' . $project->imgSrc) }}" alt="Project Image"
                        class="img-fluid w-100 h-100 object-fit-cover opacity-50">
 
+                  {{-- Title overlay --}}
                   <div class="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-center">
                     {{ $project->title }} <br>
-                    <p class="fs-6 text-muted-white">Click to Edit</p>
+                    <p class="fs-6 text-muted-white">Click to <i class="fa-solid fa-pencil"></i> </p>
                   </div>
                 </a>
-
-                {{-- Hidden form --}}
-                <form id="edit-form-{{ $project->id }}" action="{{ route('work.update', $project->id) }}" method="POST"
-                      class="d-none">
-                  @csrf
-                  @method('PATCH')
-                </form>
               @endforeach
             @else
               {{-- For site visitors --}}

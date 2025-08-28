@@ -52,4 +52,5 @@ Route::patch('/info/cv', [InformationController::class, 'edit_CV'])->middleware(
 
 Route::get('/work', [WorkController::class, 'index']);
 Route::post('/work', [WorkController::class, 'store'])->middleware('auth');;
+Route::get('/work/{id}', [WorkController::class, 'show'])->middleware('auth')->name('work.show');
 Route::patch('/work/{id}', [WorkController::class, 'edit'])->middleware('auth')->name('work.update');
