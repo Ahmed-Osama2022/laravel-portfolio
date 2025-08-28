@@ -112,21 +112,45 @@
         <div class="row flex-row gap-3 align-items-center">
           {{-- Repeat this NOTE: and don't forget to use pagination! --}}
           @if (count($projects) !== 0)
-            @foreach ($projects as $project)
-              <a href="{{ asset('storage/' . $project->online_link) }}"
-                 class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
-                {{-- Image --}}
-                <img src="{{ asset('storage/' . $project->imgSrc) }}" alt="Project Image"
-                     class="img-fluid w-100 h-100 object-fit-cover opacity-50">
+            @if (Auth::check())
+              {{-- For Auth users --}}
+              @foreach ($projects as $project)
+                <a href="#"
+                   onclick="event.preventDefault(); document.getElementById('edit-form-{{ $project->id }}').submit();"
+                   class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
 
-                {{-- Title overlay --}}
-                <div class="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-center">
-                  {{ $project->title }}
-                </div>
-                {{-- Edit Button for each project --}}
-                <p class="btn btn-outline-secondary text-end"><i class="fa-solid fa-pencil"></i></p>
-              </a>
-            @endforeach
+                  <img src="{{ asset('storage/' . $project->imgSrc) }}" alt="Project Image"
+                       class="img-fluid w-100 h-100 object-fit-cover opacity-50">
+
+                  <div class="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-center">
+                    {{ $project->title }} <br>
+                    <p class="fs-6 text-muted-white">Click to Edit</p>
+                  </div>
+                </a>
+
+                {{-- Hidden form --}}
+                <form id="edit-form-{{ $project->id }}" action="{{ route('work.update', $project->id) }}" method="POST"
+                      class="d-none">
+                  @csrf
+                  @method('PATCH')
+                </form>
+              @endforeach
+            @else
+              {{-- For site visitors --}}
+              @foreach ($projects as $project)
+                <a href="{{ asset('storage/' . $project->online_link) }}"
+                   class="col-md-4 rounded-3 shadow work-card p-3 flex-fill position-relative overflow-hidden">
+                  {{-- Image --}}
+                  <img src="{{ asset('storage/' . $project->imgSrc) }}" alt="Project Image"
+                       class="img-fluid w-100 h-100 object-fit-cover opacity-50">
+
+                  {{-- Title overlay --}}
+                  <div class="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-center">
+                    {{ $project->title }}
+                  </div>
+                </a>
+              @endforeach
+            @endif
           @else
             <p class="text-white-50 fw-bold fs-4 px-5">There is no uploaded projects yet.</p>
           @endif
