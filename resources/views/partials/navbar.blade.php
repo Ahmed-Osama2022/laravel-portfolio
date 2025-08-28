@@ -14,7 +14,7 @@
         {{-- Social media icons & links --}}
         <div class="" id="navbarNav">
           @php
-            $social_links = App\Models\Social::find(1) ?? '#';
+            $social_links = App\Models\Social::find(1) ?? '';
           @endphp
           <ul class="d-flex flex-row align-items-center justify-content-between gap-3 m-auto px-0">
             <li class="nav-item">
@@ -37,8 +37,7 @@
               <a class="nav-link" href="{{ $social_links->github ?? '#' }}"><i class="fa-brands fa-github fs-5"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"
-                 href="{{ $social_links->whatsapp ? 'https://wa.me/+2' . $social_links->whatsapp : '#' }}"><i
+              <a class="nav-link" href="{{ $social_links ? 'https://wa.me/+2' . $social_links->whatsapp : '#' }}"><i
                    class="fa-brands fa-whatsapp fs-5"></i></a>
             </li>
             @if (Auth::check())
