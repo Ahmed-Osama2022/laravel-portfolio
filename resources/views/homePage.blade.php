@@ -3,7 +3,7 @@
 
 @section('content')
   {{-- Banner --}}
-  <div class="container">
+  <div class="container mb-4 pb-4   mb-lg-0 pb-lg-0">
     @include('pages.banner')
   </div>
 @endsection
