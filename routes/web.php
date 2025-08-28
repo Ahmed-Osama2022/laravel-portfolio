@@ -29,14 +29,6 @@ Route::get('/services', function () {
   return view('pages.services');
 });
 
-// Route::get('/work', function () {
-//   return view('pages.work');
-// });
-
-// Route::get('/contact', function () {
-// return view('pages.contact');
-// });
-
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index']);

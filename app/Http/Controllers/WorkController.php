@@ -15,25 +15,26 @@ class WorkController extends Controller
   public function index()
   {
     $projects = Project::all();
+    /**
+     * LATER: make this with pagination;
+     * Don't forget to add {{ $paginator->links }};
+     * And also configure it in the AppSeviceProvider
+     */
     // $projects = Project::paginate(1);
-
 
     return view('pages.work', compact('projects'));
   }
-
 
   /**
    * Store a new record.
    */
   public function store(StoreProjectRequest $request)
   {
-    // dd($request->all());
     $data = $request->except(['_token']);
 
     // Get the photo and save it in /storage/public/projects
     // Get the uploaded file
     $image = $data['imgSrc'];
-    // dd($image);
 
     // Get the original filename
     $originalName = $image->getClientOriginalName();
@@ -58,7 +59,6 @@ class WorkController extends Controller
   {
     // Get the record from the DB.
     $project = Project::find($id);
-    // dd($project);
 
     return view('pages.workEdit', compact('project'));
   }
@@ -95,13 +95,11 @@ class WorkController extends Controller
   /**
    * Delete a specific record.
    */
-
   public function destroy(Request $request, $id)
   {
     // Get the record from the DB.
     $project = Project::find($id);
 
-    // dd($project);
     $project->delete();
 
     return redirect('/work')->with('work_delete', 'Project deleted successfully.');
