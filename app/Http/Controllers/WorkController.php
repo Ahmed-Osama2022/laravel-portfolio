@@ -28,7 +28,6 @@ class WorkController extends Controller
   public function store(StoreProjectRequest $request)
   {
     // dd($request->all());
-
     $data = $request->except(['_token']);
 
     // Get the photo and save it in /storage/public/projects
@@ -43,7 +42,6 @@ class WorkController extends Controller
     $path = $image->storeAs('uploads/projects', $originalName, 'public');
 
     // Get the link and save it intp the DB.
-
     Project::create([
       'title' => $data['title'],
       'online_link' => $data['online_link'],
@@ -70,33 +68,26 @@ class WorkController extends Controller
    */
   public function edit(UpdateProjectRequest $request, $id)
   {
-    // dd($request->all());
+    // Find the project
+    $project = Project::findOrFail($id);
 
-    $data = $request->except(['_token']);
+    // Update fields
+    $project->title = $request->input('title');
+    $project->online_link = $request->input('online_link');
 
-    // Get the photo and save it in /storage/public/projects
-    // Get the uploaded file
-    $image = $data['imgSrc'];
-    // dd($image);
+    // Handle new image if uploaded
+    if ($request->hasFile('imgSrc')) {
+      $image = $request->file('imgSrc');
+      $originalName = $image->getClientOriginalName();
 
-    // Get the original filename
-    $originalName = $image->getClientOriginalName();
+      // Store with same name in public/uploads/projects
+      $path = $image->storeAs('uploads/projects', $originalName, 'public');
 
-    // Store the file with the same name inside "uploads" directory
-    $path = $image->storeAs('uploads/projects', $originalName, 'public');
+      // Save path in DB
+      $project->imgSrc = $path;
+    }
 
-    // Get the link and save it intp the DB.
-
-    Project::update([
-      'title' => $data['title'],
-      'online_link' => $data['online_link'],
-      'imgSrc' => $path
-    ]);
-
-
-
-
-
+    $project->save();
 
     return redirect('/work')->with('work_update', 'Project updated successfully.');
   }

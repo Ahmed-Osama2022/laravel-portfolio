@@ -15,3 +15,30 @@
 .work-card:hover {
   background-color: rgba(0, 0, 0, 0.55);
 }
+
+#projectsAddModal input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+
+}
+
+/* Chrome/Edge/Safari */
+input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+
+}
+
+/* IE 10+ */
+input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+
+}
+
+/* Edge */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+
+}

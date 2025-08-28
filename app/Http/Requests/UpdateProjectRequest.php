@@ -22,9 +22,9 @@ class UpdateProjectRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'title' => ['required', 'string', 'max:45'],
+      'title' => ['nullable', 'string', 'max:45'],
       'imgSrc' => [
-        'required',
+        'nullable',
         'image',
         'mimes:jpg,jpeg,png,gif,webp',
         'max:10240' // 10MB (size is in kilobytes)

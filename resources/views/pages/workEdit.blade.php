@@ -1,6 +1,5 @@
 @extends('layouts.master')
 {{-- Check first if there is a record --}}
-
 @if (!$project)
   @php
     abort(404);
@@ -17,15 +16,15 @@
         @csrf
         @method('DELETE')
 
-        <button type="submit" class="btn btn-outline-danger py-2 ms-4 my-auto">
-          Delete <i class="fa-solid fa-trash fs-3"></i>
+        <button type="submit" class="btn btn-outline-danger py-2 px-3 ms-4 my-auto">
+          <p class="m-0">Delete <i class="fa-solid fa-trash"></i></p>
         </button>
       </form>
     </div>
 
     {{-- Edit Form --}}
     <form action="{{ route('work.update', ['id' => $project->id]) }}" method="POST" enctype="multipart/form-data"
-          class="p-3 sora-font">
+          class="p-3 sora-font" data-aos="fade-up">
       @csrf
       @method('PATCH')
 
@@ -43,22 +42,24 @@
 
       {{-- 1- Project Title --}}
       <div class="mb-3">
-        <label for="title" class="form-label text-capitalize">Project Title*</label>
+        <label for="title" class="form-label text-capitalize">Project Title <span
+                class="text-white-50">(Required)</span></label>
         <input type="text" name="title" class="form-control bg-transparent text-white" id="title"
-               value="{{ $project->title }}">
+               value="{{ old('title', $project->title) }}">
       </div>
       {{-- 2- Project online_link (Optional) --}}
       <div class="mb-3">
         <label for="online_link" class="form-label text-capitalize">Project online link (Or Github repo link)
           <span class="text-white-50">(Optional)</span> </label>
         <input type="text" name="online_link" class="form-control bg-transparent text-white" id="online_link"
-               value="{{ $project->online_link }}">
+               value="{{ old('online_link', $project->online_link) }}">
       </div>
       {{-- 3- Project ImgSrc --}}
       <div class="mb-3">
-        <label for="imgSrc" class="form-label text-capitalize">Project Image*</label>
+        <label for="imgSrc" class="form-label text-capitalize">Project Image <span
+                class="text-white-50">(Required)</span></label>
         <input type="file" name="imgSrc" class="form-control bg-transparent text-white" id="imgSrc"
-               accept="image/*">
+               accept="image/*" value="{{ $project->imgSrc }}">
 
         {{-- Image Preview --}}
         <div class="mt-3 w-50 mx-auto">

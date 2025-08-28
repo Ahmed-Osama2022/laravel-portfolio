@@ -8,7 +8,7 @@
         <div class="modal-content sora-font">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Add project</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
 
@@ -18,13 +18,15 @@
               {{-- 1- Project Title --}}
               <div class="mb-3">
                 <label for="title" class="form-label text-capitalize">Project Title</label>
-                <input type="text" name="title" class="form-control bg-transparent text-white" id="title">
+                <input type="text" name="title" class="form-control bg-transparent text-white" id="title"
+                       placeholder="Laravel order App">
               </div>
               {{-- 2- Project online_link (Optional) --}}
               <div class="mb-3">
                 <label for="online_link" class="form-label text-capitalize">Project online link (Or Github repo link)
                   <span class="text-white-50">(Optional)</span> </label>
-                <input type="text" name="online_link" class="form-control bg-transparent text-white" id="online_link">
+                <input type="text" name="online_link" class="form-control bg-transparent text-white" id="online_link"
+                       placeholder="https://example.com">
               </div>
               {{-- 3- Project ImgSrc --}}
               <div class="mb-3">
