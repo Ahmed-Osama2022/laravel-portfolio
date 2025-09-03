@@ -107,8 +107,6 @@ class InformationController extends Controller
     $file = File::find($id);
 
     if ($file) {
-      // dd($file->cv_link);
-
       // Delete the file from storage
       Storage::disk('public')->delete($file->cv_link);
       // Delete the record
