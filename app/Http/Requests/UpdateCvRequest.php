@@ -22,7 +22,7 @@ class UpdateCvRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'cvFile' => 'required|file|mimes:pdf|max:30720',
+      'cvFile' => 'required|file|mimes:pdf|max:9216',
     ];
   }
 

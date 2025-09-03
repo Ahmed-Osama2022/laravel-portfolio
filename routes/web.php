@@ -37,9 +37,9 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/contact', [InformationController::class, 'index']);
 Route::post('/info', [InformationController::class, 'store'])->middleware('auth');
 Route::patch('/contact', [InformationController::class, 'edit'])->middleware('auth');
-Route::delete('/info', [InformationController::class, 'destroy'])->middleware('auth');
 
 Route::patch('/info/cv', [InformationController::class, 'edit_CV'])->middleware('auth');
+Route::delete('/info/cv/{id}', [InformationController::class, 'destroy_CV'])->middleware('auth')->name('cv.delete');
 
 
 Route::get('/work', [WorkController::class, 'index']);

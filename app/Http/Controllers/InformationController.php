@@ -101,8 +101,20 @@ class InformationController extends Controller
   /**
    * Delete a specific record.
    */
-  public function destroy(Request $request)
+  public function destroy_CV($id)
   {
-    //
+    // 1. Delete record (if exists)
+    $file = File::find($id);
+
+    if ($file) {
+      // dd($file->cv_link);
+
+      // Delete the file from storage
+      Storage::disk('public')->delete($file->cv_link);
+      // Delete the record
+      $file->delete();
+
+      return redirect()->back()->with('cv_delete', 'CV file deleted successfully.');
+    }
   }
 }

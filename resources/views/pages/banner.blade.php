@@ -14,7 +14,7 @@
           <h2 class="fs-6">Upload your CV here:</h2>
           <p class="text-muted-white">
             Please choose a PDF file to upload! <br>
-            maximum file size is <span class="text-decoration-underline">30MB</span>
+            maximum file size is <span class="text-decoration-underline">9MB</span>
           </p>
           <form action="/info/cv" method="POST" enctype="multipart/form-data">
             @csrf
@@ -76,8 +76,15 @@
         <h1 class="laravel-color">Full stack web developer</h1>
       </div>
       <div>
+        {{-- Show the flash messages --}}
         {{-- Show the success message for uploading the CV file --}}
-        <p class="text-muted-white fw-bold mt-2">{{ session('file_success') }}</p>
+        @if (session('file_success'))
+          <p class="text-success fw-bold mt-2">{{ session('file_success') }}</p>
+        @endif
+        {{-- Show the success message for deleting the CV file --}}
+        @if (session('cv_delete'))
+          <p class="text-success fw-bold mt-2">{{ session('cv_delete') }}</p>
+        @endif
         {{-- Show error message for cvFile --}}
         @error('cvFile')
           <div class="text-danger mt-2 fw-bold">Error: {{ $message }}</div>
@@ -93,10 +100,22 @@
         {{-- NOTE: This button will open a modal... --}}
         @if (Auth::check())
           <!-- Button trigger modal -->
+
           <a href="#" class="btn btn-outline-info px-3 py-2 mt-4 ms-2" data-bs-toggle="modal"
              data-bs-target="#cvModal">
             <i class="fa-solid fa-pencil"></i>
           </a>
+          @if ($file)
+            {{-- Delete button --}}
+            <form action="{{ route('cv.delete', ['id' => $file->id]) }}" method="POST" class="mt-3">
+              @csrf
+              @method('DELETE')
+
+              <button type="submit" class="btn btn-outline-danger py-2 px-3">
+                Delete <i class="fa-solid fa-trash"></i>
+              </button>
+            </form>
+          @endif
         @endif
       </div>
     </div>
